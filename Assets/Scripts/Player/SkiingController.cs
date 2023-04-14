@@ -19,7 +19,8 @@ namespace Player
         public float movementSpeed = 1.0f;
         public float delayCheckJumpFinished = 1.0f;
         public SpriteRenderer sprite;
-        
+        public float rotationFactor = 10.0f;
+        public float currentRotation = 0.0f;
         private Quaternion rotateTowards = Quaternion.identity;
         
         private float jumpStarted = 0.0f;
@@ -47,7 +48,12 @@ namespace Player
                     rotateTowards = Quaternion.Euler(new Vector3(0,0,groundCheck.myAngle));
                 }
             }
-            
+
+            if (currentRotation != 0)
+            {
+                rotateTowards = Quaternion.Euler(new Vector3(0, 0,
+                    sprite.transform.rotation.eulerAngles.z + rotationFactor * currentRotation));
+            }
             sprite.transform.rotation = Quaternion.Slerp(sprite.transform.rotation, rotateTowards, 0.05f);
         }
 
@@ -125,13 +131,16 @@ namespace Player
                 Debug.Log("We hit the ground again, ending jump");
                 playerState = PlayerState.Skiing;
                 groundCheck.enabled = true;
+                currentRotation = 0.0f;
             }
         }
         private void OnRotate(InputValue value)
         {
+            if (playerState != PlayerState.Jumping) return;
+            
             Debug.Log("rotation");
             float rotation = value.Get<float>();
-            Debug.Log(rotation);
+            currentRotation = rotation;
         }
 
         private void MoveLogic()

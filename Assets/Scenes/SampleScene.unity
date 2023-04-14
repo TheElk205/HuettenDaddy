@@ -6995,6 +6995,8 @@ MonoBehaviour:
   movementSpeed: 5
   delayCheckJumpFinished: 1
   sprite: {fileID: 0}
+  rotationFactor: 50
+  currentRotation: 0
 --- !u!114 &234654986
 MonoBehaviour:
   m_ObjectHideFlags: 0

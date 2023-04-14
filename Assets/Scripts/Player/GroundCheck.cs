@@ -51,7 +51,6 @@ namespace Player
                 //create temp vector2 to store playerFeet position
                 Vector2 temp = playerFeet.position;
                 //We get the y position of our raycast hit / and set the y value of our temp vector2
-                Debug.Log("Hit Point: " + Hit2D.point.y + " X: " + Hit2D.point.x);
                 temp.y = Hit2D.point.y;
                 //we can now directly set our players position by setting it to our temp vector2 value that we adjusted.
                 playerFeet.position = temp; //Vector3.SmoothDamp(playerFeet.position, temp, ref velocity, smoothTime);
