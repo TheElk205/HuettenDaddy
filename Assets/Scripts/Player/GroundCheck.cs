@@ -9,14 +9,14 @@ namespace Player
     public class GroundCheck : MonoBehaviour
     {
         //Store transform of raycastOrigin object. Used for raycast in GroundCheckMethod()
-        [SerializeField] private Transform rayCastOrigin;
+        [SerializeField] public Transform rayCastOrigin;
 
         //Store playerFeet transform to allow us to adjust our players position in GroundCheckMethod()
-        [SerializeField] private Transform playerFeet;
+        [SerializeField] public Transform playerFeet;
 
         //LayerMask used in raycast to make raycast more Performant
         //The raycast will ignore all objects outside of the layermask we select.
-        [SerializeField] private LayerMask layerMask;
+        [SerializeField] public LayerMask layerMask;
 
         //Store the hit information from our raycast, to use to update player's position
         private RaycastHit2D Hit2D;
@@ -27,7 +27,8 @@ namespace Player
 
         private Vector3 velocity = Vector3.zero;
         public float smoothTime = 0.25f;
-        
+
+        public bool enabled = true;
         private void Start()
         {
             this.sprite = this.transform.GetComponentInChildren<SpriteRenderer>();
@@ -37,7 +38,10 @@ namespace Player
         void Update()
         {
             //Do not need to run in FixedUpdate since this is not physics based. 
-            GroundCheckMethod();
+            if (enabled)
+            {
+                GroundCheckMethod();
+            }
         }
 
         //This method will use a raycast to check below the player. Use this ray hit info to update player position
@@ -54,7 +58,7 @@ namespace Player
                 //We get the y position of our raycast hit/ and set the y value of our temp vector2
                 temp.y = Hit2D.point.y;
                 //we can now directly set our players position by setting it to our temp vector2 value that we adjusted.
-                playerFeet.position = temp;
+                playerFeet.position = temp;//Vector3.SmoothDamp(playerFeet.position, temp, ref velocity, smoothTime);
                 Debug.DrawRay(Hit2D.point, Hit2D.normal, Color.green);
                 myAngle = -Vector2.SignedAngle(Hit2D.normal, Vector2.up);
             }
@@ -65,7 +69,6 @@ namespace Player
             
             if (sprite)
             {
-                Vector3 rotation = Vector3.SmoothDamp(sprite.transform.rotation.eulerAngles, new Vector3(0,0,myAngle + angleOffset), ref velocity, smoothTime);
                 sprite.transform.rotation = Quaternion.Euler(new Vector3(0,0,myAngle + angleOffset));
             }
         }
