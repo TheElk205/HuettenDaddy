@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,14 @@ namespace Player
         //Store the hit information from our raycast, to use to update player's position
         private RaycastHit2D Hit2D;
         
+        public float myAngle = 0.0f;
+        public float angleOffset = 90.0f;
+        public SpriteRenderer sprite;
+
+        private void Start()
+        {
+            this.sprite = this.transform.GetComponentInChildren<SpriteRenderer>();
+        }
 
         // Update is called once per frame
         void Update()
@@ -32,7 +41,7 @@ namespace Player
         {
             //store the raycast hit info/The raycast arguements are (origin of ray, direction of ray, length of ray, what layer mask to check against)
             Hit2D = Physics2D.Raycast(rayCastOrigin.position, -Vector2.up, 100f, layerMask);
-
+            Debug.DrawRay(rayCastOrigin.position, Vector2.up, Color.red);
             //Performant check to see if raycast hit has any data, if so, run the code
             if (Hit2D != false)
             {
@@ -42,7 +51,19 @@ namespace Player
                 temp.y = Hit2D.point.y;
                 //we can now directly set our players position by setting it to our temp vector2 value that we adjusted.
                 playerFeet.position = temp;
+                Debug.DrawRay(Hit2D.point, Hit2D.normal, Color.green);
+                myAngle = -Vector2.SignedAngle(Hit2D.normal, Vector2.up);
             }
+            else
+            {
+                myAngle = -angleOffset;
+            }
+            
+            if (sprite)
+            {
+                sprite.transform.rotation = Quaternion.Euler(0,0,myAngle + angleOffset);
+            }
+            
         }
     }
 
