@@ -12,12 +12,17 @@ public class Parallax : MonoBehaviour
     public float parallaxEffect;
     public float yOffset = 0;
     private float currentOffset = 0;
-        // Start is called before the first frame update
+
+    private Vector3 velocity;
+
+    private float smoothFactor = 0.25f;
+    
+    // Start is called before the first frame update
     void Start()
     {
         startpos = transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
-        currentOffset = currentOffset;
+        currentOffset = transform.position.y;
     }
 
     private void FixedUpdate()
@@ -34,15 +39,6 @@ public class Parallax : MonoBehaviour
         else if (temp.x < startpos - length)
         {
             startpos -= length;
-        }
-        
-        if (temp.y > currentOffset + yOffset)
-        {
-            currentOffset += yOffset;
-        }
-        else if (temp.y < currentOffset - yOffset)
-        {
-            currentOffset -= yOffset;
         }
     }
 }
