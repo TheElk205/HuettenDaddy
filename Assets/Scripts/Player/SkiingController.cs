@@ -132,6 +132,8 @@ namespace Player
                 playerState = PlayerState.Skiing;
                 groundCheck.enabled = true;
                 currentRotation = 0.0f;
+                float angle = (sprite.transform.rotation.eulerAngles.z + Vector2.SignedAngle(Hit2D.normal, Vector2.up)) % 360;
+                Debug.Log("We hit the bottom with an angle of: " + angle);
             }
         }
         private void OnRotate(InputValue value)
