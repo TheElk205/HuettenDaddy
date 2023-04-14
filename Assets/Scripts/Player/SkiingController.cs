@@ -18,7 +18,8 @@ namespace Player
         public float privateRotation = 0.0f;
         public float movementSpeed = 1.0f;
         public float delayCheckJumpFinished = 1.0f;
-
+        public SpriteRenderer sprite;
+        
         private float jumpStarted = 0.0f;
         //Store the hit information from our raycast, to use to update player's position
         private RaycastHit2D Hit2D;
@@ -26,6 +27,7 @@ namespace Player
         void Start()
         {
             groundCheck = GetComponent<GroundCheck>();
+            this.sprite = this.transform.GetComponentInChildren<SpriteRenderer>();
         }
 
         public void Update()
@@ -38,6 +40,10 @@ namespace Player
             else if (playerState == PlayerState.Skiing)
             {
                 MoveLogic();
+                if (sprite)
+                {
+                    sprite.transform.rotation = Quaternion.Euler(new Vector3(0,0,groundCheck.myAngle));
+                }
             }
         }
 

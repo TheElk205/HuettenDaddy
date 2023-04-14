@@ -23,16 +23,11 @@ namespace Player
         
         public float myAngle = 0.0f;
         public float angleOffset = 90.0f;
-        public SpriteRenderer sprite;
 
         private Vector3 velocity = Vector3.zero;
         public float smoothTime = 0.25f;
 
         public bool enabled = true;
-        private void Start()
-        {
-            this.sprite = this.transform.GetComponentInChildren<SpriteRenderer>();
-        }
 
         // Update is called once per frame
         void Update()
@@ -66,11 +61,6 @@ namespace Player
             else
             {
                 myAngle = -angleOffset;
-            }
-            
-            if (sprite)
-            {
-                sprite.transform.rotation = Quaternion.Euler(new Vector3(0,0,myAngle + angleOffset));
             }
         }
     }
