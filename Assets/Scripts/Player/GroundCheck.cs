@@ -49,16 +49,16 @@ namespace Player
         {
             //store the raycast hit info/The raycast arguements are (origin of ray, direction of ray, length of ray, what layer mask to check against)
             Hit2D = Physics2D.Raycast(rayCastOrigin.position, -Vector2.up, 100f, layerMask);
-            Debug.DrawRay(rayCastOrigin.position, Vector2.up, Color.red);
+            Debug.DrawRay(rayCastOrigin.position, -Vector2.up * 100f, Color.red);
             //Performant check to see if raycast hit has any data, if so, run the code
             if (Hit2D != false)
             {
                 //create temp vector2 to store playerFeet position
                 Vector2 temp = playerFeet.position;
-                //We get the y position of our raycast hit/ and set the y value of our temp vector2
+                //We get the y position of our raycast hit / and set the y value of our temp vector2
                 temp.y = Hit2D.point.y;
                 //we can now directly set our players position by setting it to our temp vector2 value that we adjusted.
-                playerFeet.position = temp;//Vector3.SmoothDamp(playerFeet.position, temp, ref velocity, smoothTime);
+                playerFeet.position = temp; //Vector3.SmoothDamp(playerFeet.position, temp, ref velocity, smoothTime);
                 Debug.DrawRay(Hit2D.point, Hit2D.normal, Color.green);
                 myAngle = -Vector2.SignedAngle(Hit2D.normal, Vector2.up);
             }
