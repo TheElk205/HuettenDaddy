@@ -1,0 +1,32 @@
+### Unity
+# Cache Folders
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/Assets/AssetStoreTools*
+
+# User Data
+/UserSettings
+
+# Regenerated Files
+testResults.xml
+*.sln
+*.csproj
+
+### IDE's
+# Visual Studio directory
+.vs/
+
+# Rider sirectory
+.idea
+
+### Specialized
+# Output
+/[Bb]in/
+
+# Addressables
+**/AddressableAssetsData/Windows*
+.DS_Store
