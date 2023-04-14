@@ -87,20 +87,19 @@ namespace Player
             // Calculate flight time.
             float flightDuration = target_Distance / Vx;
             Debug.Log("Flight duration to target: " + flightDuration);
-            // Rotate projectile to face the target.
-            //transform.rotation = Quaternion.LookRotation(end - transform.position);
      
             float elapse_time = 0;
      
             while (true)
             {
-                transform.Translate (movementSpeed * Time.deltaTime, (Vy - (dragDown * elapse_time)) * Time.deltaTime, Vx * Time.deltaTime);
-     
-                elapse_time += Time.deltaTime;
                 if (playerState != PlayerState.Jumping)
                 {
                     break;
                 }
+                transform.parent.Translate (0, (Vy - (dragDown * elapse_time)) * Time.deltaTime, 0);
+                transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
+     
+                elapse_time += Time.deltaTime;
                 yield return null;
             }
             Debug.Log("Finished jump");
