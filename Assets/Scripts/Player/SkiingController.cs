@@ -9,7 +9,6 @@ namespace Player
     {
         //used to store the player input value, stores and x (left/right) and y (up/down) value
         private Vector2 playerInputValue;
-
         // Update is called once per frame
         void Update()
         {
