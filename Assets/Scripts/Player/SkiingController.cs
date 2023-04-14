@@ -20,6 +20,8 @@ namespace Player
         public float delayCheckJumpFinished = 1.0f;
         public SpriteRenderer sprite;
         
+        private Quaternion rotateTowards = Quaternion.identity;
+        
         private float jumpStarted = 0.0f;
         //Store the hit information from our raycast, to use to update player's position
         private RaycastHit2D Hit2D;
@@ -42,9 +44,11 @@ namespace Player
                 MoveLogic();
                 if (sprite)
                 {
-                    sprite.transform.rotation = Quaternion.Euler(new Vector3(0,0,groundCheck.myAngle));
+                    rotateTowards = Quaternion.Euler(new Vector3(0,0,groundCheck.myAngle));
                 }
             }
+            
+            sprite.transform.rotation = Quaternion.Slerp(sprite.transform.rotation, rotateTowards, 0.05f);
         }
 
         //This method is derived from our player input component/input actions

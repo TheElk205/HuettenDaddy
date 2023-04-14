@@ -6989,11 +6989,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundCheck: {fileID: 0}
   playerState: 0
-  checkBottomAfterJumpLength: 2
+  checkBottomAfterJumpLength: 0.5
   dragDown: 5
   privateRotation: 45
   movementSpeed: 5
   delayCheckJumpFinished: 1
+  sprite: {fileID: 0}
 --- !u!114 &234654986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7013,8 +7014,7 @@ MonoBehaviour:
     m_Bits: 64
   myAngle: 0
   angleOffset: 0
-  sprite: {fileID: 0}
-  smoothTime: 0.25
+  smoothTime: 1
   enabled: 1
 --- !u!4 &234654988
 Transform:
