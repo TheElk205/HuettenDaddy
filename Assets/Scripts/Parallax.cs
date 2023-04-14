@@ -10,27 +10,39 @@ public class Parallax : MonoBehaviour
     public Camera camera;
 
     public float parallaxEffect;
+    public float yOffset = 0;
+    private float currentOffset = 0;
         // Start is called before the first frame update
     void Start()
     {
         startpos = transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
+        currentOffset = currentOffset;
     }
 
     private void FixedUpdate()
     {
-        float temp = (camera.transform.position.x * (1 - parallaxEffect));
-        float dist = (camera.transform.position.x * parallaxEffect);
+        Vector3 temp = (camera.transform.position * (1 - parallaxEffect));
+        Vector3 dist = (camera.transform.position * parallaxEffect);
 
-        transform.position = new Vector3(startpos + dist, transform.position.y, transform.position.z);
+        transform.position = new Vector3(startpos + dist.x, transform.position.y, transform.position.z);
 
-        if (temp > startpos + length)
+        if (temp.x > startpos + length)
         {
             startpos += length;
         }
-        else if (temp < startpos - length)
+        else if (temp.x < startpos - length)
         {
             startpos -= length;
+        }
+        
+        if (temp.y > currentOffset + yOffset)
+        {
+            currentOffset += yOffset;
+        }
+        else if (temp.y < currentOffset - yOffset)
+        {
+            currentOffset -= yOffset;
         }
     }
 }

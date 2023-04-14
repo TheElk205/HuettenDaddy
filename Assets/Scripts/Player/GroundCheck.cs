@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Player
@@ -24,6 +25,9 @@ namespace Player
         public float angleOffset = 90.0f;
         public SpriteRenderer sprite;
 
+        private Vector3 velocity = Vector3.zero;
+        public float smoothTime = 0.25f;
+        
         private void Start()
         {
             this.sprite = this.transform.GetComponentInChildren<SpriteRenderer>();
@@ -61,9 +65,9 @@ namespace Player
             
             if (sprite)
             {
-                sprite.transform.rotation = Quaternion.Euler(0,0,myAngle + angleOffset);
+                Vector3 rotation = Vector3.SmoothDamp(sprite.transform.rotation.eulerAngles, new Vector3(0,0,myAngle + angleOffset), ref velocity, smoothTime);
+                sprite.transform.rotation = Quaternion.Euler(new Vector3(0,0,myAngle + angleOffset));
             }
-            
         }
     }
 
