@@ -37,12 +37,8 @@ namespace Player
         public void Update()
         {
             if (GameEventSystem.currentGameState != GameState.Playing) return;
-            if (playerState == PlayerState.Jumping && Time.time > jumpStarted + delayCheckJumpFinished)
-            {
-                HitBottomCheck();
-            }
 
-            else if (playerState == PlayerState.Skiing)
+            if (playerState == PlayerState.Skiing)
             {
                 MoveLogic();
                 if (sprite)
@@ -57,6 +53,15 @@ namespace Player
                     sprite.transform.rotation.eulerAngles.z + rotationFactor * currentRotation * Time.deltaTime));
             }
             sprite.transform.rotation = Quaternion.Slerp(sprite.transform.rotation, rotateTowards, 0.05f);
+        }
+
+        public void FixedUpdate()
+        {
+            if (GameEventSystem.currentGameState != GameState.Playing) return;
+            if (playerState == PlayerState.Jumping && Time.time > jumpStarted + delayCheckJumpFinished)
+            {
+                HitBottomCheck();
+            }
         }
 
         //This method is derived from our player input component/input actions
