@@ -1,0 +1,20 @@
+using UnityEngine;
+
+namespace DefaultNamespace
+{
+    public class GameEventSystem : MonoBehaviour
+    {
+        public static GameState currentGameState = GameState.StartMenu;
+        
+        public void StartGame()
+        {
+            GameEventSystem.currentGameState = GameState.Playing;
+        }
+    }
+
+    public enum GameState
+    {
+        StartMenu,
+        Playing
+    }
+}

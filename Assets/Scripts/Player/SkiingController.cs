@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Vector2 = UnityEngine.Vector2;
@@ -35,6 +36,7 @@ namespace Player
 
         public void Update()
         {
+            if (GameEventSystem.currentGameState != GameState.Playing) return;
             if (playerState == PlayerState.Jumping && Time.time > jumpStarted + delayCheckJumpFinished)
             {
                 HitBottomCheck();

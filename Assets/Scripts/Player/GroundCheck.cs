@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -32,6 +33,7 @@ namespace Player
         // Update is called once per frame
         void Update()
         {
+            if (GameEventSystem.currentGameState != GameState.Playing) return;
             //Do not need to run in FixedUpdate since this is not physics based. 
             if (enabled)
             {
