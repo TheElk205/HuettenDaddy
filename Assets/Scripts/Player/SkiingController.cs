@@ -13,7 +13,7 @@ namespace Player
         private Vector2 playerInputValue;
         public GroundCheck groundCheck;
         private bool canJump = true;
-        public PlayerState playerState = PlayerState.Skiing;
+        public PlayerState playerState = PlayerState.Idle;
         public float checkBottomAfterJumpLength = 1.0f;
         public float dragDown = 1.0f;
         public float privateRotation = 0.0f;
@@ -23,6 +23,7 @@ namespace Player
         public float rotationFactor = 10.0f;
         public float currentRotation = 0.0f;
         private Quaternion rotateTowards = Quaternion.identity;
+        public Animator animator;
         
         private float jumpStarted = 0.0f;
         //Store the hit information from our raycast, to use to update player's position
@@ -32,12 +33,15 @@ namespace Player
         {
             groundCheck = GetComponent<GroundCheck>();
             this.sprite = this.transform.GetComponentInChildren<SpriteRenderer>();
+            animator = this.GetComponentInChildren<Animator>();
         }
 
         public void Update()
         {
             if (GameEventSystem.currentGameState != GameState.Playing) return;
 
+            if (playerState == PlayerState.Idle) playerState = PlayerState.Skiing;
+            
             if (playerState == PlayerState.Skiing)
             {
                 MoveLogic();
@@ -78,6 +82,7 @@ namespace Player
         {
             if (groundCheck && playerState == PlayerState.Skiing)
             {
+                animator.SetBool("Jumping", true);
                 playerState = PlayerState.Jumping;
                 groundCheck.enabled = false;
                 Debug.Log("Jump");
@@ -110,9 +115,11 @@ namespace Player
             // Calculate flight time.
             float flightDuration = target_Distance / Vx;
             Debug.Log("Flight duration to target: " + flightDuration);
-     
+
+            yield return null;
+            yield return null;
+            
             float elapse_time = 0;
-     
             while (true)
             {
                 if (playerState != PlayerState.Jumping)
@@ -126,6 +133,7 @@ namespace Player
                 yield return null;
             }
             Debug.Log("Finished jump");
+            animator.SetBool("Jumping", false);
         }
 
         private void HitBottomCheck()
@@ -163,6 +171,7 @@ namespace Player
 
     public enum PlayerState
     {
+        Idle,
         Skiing,
         Jumping
     }

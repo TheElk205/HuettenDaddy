@@ -10,6 +10,16 @@ namespace DefaultNamespace
         {
             GameEventSystem.currentGameState = GameState.Playing;
         }
+
+        public void Update()
+        {
+            if (currentGameState != GameState.StartMenu) return;
+            
+            if(Input.GetKeyDown (KeyCode.Return))
+            {
+                StartGame();
+            }
+        }
     }
 
     public enum GameState
