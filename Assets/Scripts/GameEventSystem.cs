@@ -25,6 +25,7 @@ namespace DefaultNamespace
     public enum GameState
     {
         StartMenu,
-        Playing
+        Playing,
+        GameOver
     }
 }

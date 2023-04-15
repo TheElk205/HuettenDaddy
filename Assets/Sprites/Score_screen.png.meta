@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1e26a0be4d44e4dc79aab7dfbf4fb275
+guid: 9f3f1c56d0e39491eb9be9a5eb735596
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -117,112 +117,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: dadtastic_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 409
-        height: 207
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a923dec4a4c2c40f5ad56094f39e23bf
-      internalID: 729161670
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dadtastic_1
-      rect:
-        serializedVersion: 2
-        x: 409
-        y: 0
-        width: 409
-        height: 207
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 451eab4494de84bbfb9fec65faf11aa2
-      internalID: -70726607
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dadtastic_2
-      rect:
-        serializedVersion: 2
-        x: 818
-        y: 0
-        width: 409
-        height: 207
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2cbac7be2031a46798393b071affd61c
-      internalID: -1599230052
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dadtastic_3
-      rect:
-        serializedVersion: 2
-        x: 1227
-        y: 0
-        width: 409
-        height: 207
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 18b3912ad8d414231b6fd9e563b0e577
-      internalID: 1282538187
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dadtastic_4
-      rect:
-        serializedVersion: 2
-        x: 1636
-        y: 0
-        width: 409
-        height: 207
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4457746396f6348c793aa08522ba058b
-      internalID: -1915372620
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -233,12 +128,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      dadtastic_0: 729161670
-      dadtastic_1: -70726607
-      dadtastic_2: -1599230052
-      dadtastic_3: 1282538187
-      dadtastic_4: -1915372620
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
