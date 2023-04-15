@@ -24498,6 +24498,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerFeet
       objectReference: {fileID: 0}
+    - target: {fileID: 6715261046314030551, guid: b751a94a9dd344b2b9e1fb9e3d035cd7, type: 3}
+      propertyPath: rotationFactor
+      value: 7000
+      objectReference: {fileID: 0}
     - target: {fileID: 7818149481437722070, guid: b751a94a9dd344b2b9e1fb9e3d035cd7, type: 3}
       propertyPath: m_TagString
       value: Player

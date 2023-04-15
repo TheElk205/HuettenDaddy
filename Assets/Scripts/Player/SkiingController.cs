@@ -54,7 +54,7 @@ namespace Player
             if (currentRotation != 0)
             {
                 rotateTowards = Quaternion.Euler(new Vector3(0, 0,
-                    sprite.transform.rotation.eulerAngles.z + rotationFactor * currentRotation));
+                    sprite.transform.rotation.eulerAngles.z + rotationFactor * currentRotation * Time.deltaTime));
             }
             sprite.transform.rotation = Quaternion.Slerp(sprite.transform.rotation, rotateTowards, 0.05f);
         }
