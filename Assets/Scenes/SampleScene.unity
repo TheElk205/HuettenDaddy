@@ -75281,27 +75281,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5156457991227868932, guid: b751a94a9dd344b2b9e1fb9e3d035cd7, type: 3}
   m_PrefabInstance: {fileID: 1080166880}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &556642633
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556642628}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ad97c65cc63784d41afd04341074f2d3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!61 &556642634
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -79165,9 +79144,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7818149481437722070, guid: b751a94a9dd344b2b9e1fb9e3d035cd7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 556642633}
     - targetCorrespondingSourceObject: {fileID: 7818149481437722070, guid: b751a94a9dd344b2b9e1fb9e3d035cd7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 556642634}
@@ -85335,6 +85311,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1815961150367920893, guid: f89762f8dca924312823372ff51a3166, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e306cc9e7f94146f19dca4696a3d9b5a, type: 3}
     - target: {fileID: 3583064339761499704, guid: f89762f8dca924312823372ff51a3166, type: 3}
       propertyPath: m_RootOrder
       value: 5

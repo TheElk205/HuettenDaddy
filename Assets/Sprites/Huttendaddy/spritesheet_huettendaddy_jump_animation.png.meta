@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4fa1b161fcb354f9791cc167e3c3ce7f
+guid: df7c3e7dc215c493a83aedae8b072146
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -117,7 +117,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: spritesheet_huettendaddy_jump_animation_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1250
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc90705e784a94b4295fe5f3df2c5c1e
+      internalID: 290993108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_huettendaddy_jump_animation_1
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1250
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 239e1623d368c4a9ab9d42105850e587
+      internalID: -1829476168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_huettendaddy_jump_animation_2
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1250
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0712a76a6b8144b6e91308d02f56af3e
+      internalID: 355567970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_huettendaddy_jump_animation_3
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1250
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 182a67ef0b27a43f18de25966f16ab75
+      internalID: -452353458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_huettendaddy_jump_animation_4
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1250
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 850eb001577b6463f9c69a17c4240c0a
+      internalID: -478123150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -128,7 +233,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spritesheet_huettendaddy_jump_animation_0: 290993108
+      spritesheet_huettendaddy_jump_animation_1: -1829476168
+      spritesheet_huettendaddy_jump_animation_2: 355567970
+      spritesheet_huettendaddy_jump_animation_3: -452353458
+      spritesheet_huettendaddy_jump_animation_4: -478123150
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
