@@ -96,6 +96,14 @@ namespace Player
             }
         }
 
+        public void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("DoNotTouch"))
+            {
+                animator.SetTrigger("Hurt");
+            }
+        }
+
         IEnumerator JumpMovement()
         {
             Vector3 end = transform.position;

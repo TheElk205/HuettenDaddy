@@ -8,6 +8,7 @@ public class Collectible : MonoBehaviour
     public int score = 1;
     public AudioSource collectionSound;
     private bool playerHere = false;
+    
     public void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Entered: " + other.transform.tag);
